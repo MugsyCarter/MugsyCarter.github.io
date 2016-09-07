@@ -50,13 +50,6 @@ ul#list-nav li a:hover {
 	text-align: center;
 }
 
-#aside {
-	display: block;
-	background-color: #000000;
-	color: white;
-	padding: 0.5em;
-}
-
 #footer {
 	display: block;
 	background-color: #000000;
@@ -66,4 +59,9 @@ ul#list-nav li a:hover {
 
 #results {
 	background-color: #ccffff;
+}
+
+h3
+{
+	display: inline;
 }
