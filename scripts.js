@@ -1,4 +1,5 @@
  
+ 
 
 function zodiac(){
 var currentYear = 2016;
@@ -195,15 +196,17 @@ else
 	greek = "caprine";
 }
 }
-alert("You are " + gen + " " + greek + " " + chinese + "!");
+var type = "You are " + gen + " " + greek + " " + chinese + "!";
+alert(type);
+ document.getElementById("userType").innerHTML = type;
 }
-
     
     document.addEventListener('DOMContentLoaded', function(){
         document.getElementById('submit').addEventListener('click', zodiac);
     });
 
 
+document.getElementById("result").innerHTML = type;
 
 
 
