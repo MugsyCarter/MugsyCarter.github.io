@@ -1,15 +1,14 @@
+ 
 
-document.getElementById("demo").addEventListener("click", zodiac);
-
-function zodiac() {
+function zodiac(){
 var currentYear = 2016;
-var year = parseInt(prompt("In what year were you born?(numbers only)"));
-var month = parseInt(prompt("In what month were you born?(numbers only)"));
-var day = parseInt(prompt("On what day were you born?(numbers only)"));
-
 var chinese = "";
 var greek = "";
 var gen = "";
+var year = document.getElementById("year1").value;
+var month = document.getElementById("month1").value;
+var day = document.getElementById("day1").value;
+
 
 if ((currentYear - year) % 12 == 0)
 chinese = "monkey";
@@ -196,7 +195,18 @@ else
 	greek = "caprine";
 }
 }
-
-
-
 alert("You are " + gen + " " + greek + " " + chinese + "!");
+}
+
+    
+    document.addEventListener('DOMContentLoaded', function(){
+        document.getElementById('submit').addEventListener('click', zodiac);
+    });
+
+
+
+
+
+
+
+
