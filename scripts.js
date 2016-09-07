@@ -1,15 +1,14 @@
  
- 
-
 function zodiac(){
 var currentYear = 2016;
 var chinese = "";
 var greek = "";
 var gen = "";
+var greek1 = "";
+var gen1 = "";
 var year = document.getElementById("year1").value;
 var month = document.getElementById("month1").value;
 var day = document.getElementById("day1").value;
-
 
 if ((currentYear - year) % 12 == 0)
 chinese = "monkey";
@@ -37,22 +36,45 @@ else
 chinese = "goat";
 
 if (year >2009)
+{
 gen = "an alpha";
+gen1 = "Generation Alpha";
+}
 else if(year >2000)
+{
 gen = "a gen z";
+gen1 = "Generation Z";
+}
 else if(year >1983)
+{
 gen = "a millenial";
+gen1 = "The Millenial Generation";
+}
 else if(year >1965)
+{
 gen = "a gen x";
+gen1 = "Generation X";
+}
 else if(year >1945)
+{
 gen = "a boomer";
+gen1 = "The Baby Boomer Generation";
+}
 else if(year >1925)
+{
 gen = "a silent";
+gen1 = "The Silent Generation";
+}
 else if(year >1900)
+{
 gen = "the greatest";
+gen1 = "The Greatest Generation";
+}
 else
+{
 gen = "an ancient";
-
+gen1 = "unknown.  You are impossibly old"
+}
 if (month == 1)
 {
 	if (day <= 20)
@@ -196,9 +218,64 @@ else
 	greek = "caprine";
 }
 }
+
+if (greek == "caprine")
+{
+	greek1 = "Capricorn";
+}
+else if (greek == "aquatic")
+{
+	greek1 = "Aquarius";
+}
+else if (greek == "fishy")
+{
+	greek1 = "Pisces";
+}
+else if (greek == "sheepish")
+{
+	greek1 = "Aries";
+}
+else if (greek == "bull-headed")
+{
+	greek1 = "Taurus";
+}
+else if (greek == "cloned")
+{
+	greek1 = "Gemini";
+}
+else if (greek == "crabby")
+{
+	greek1 = "Cancer";
+}
+else if (greek == "lion-hearted")
+{
+	greek1 = "Leo";
+}
+else if (greek == "virginal")
+{
+	greek1 = "Virgo";
+}
+else if (greek == "balanced")
+{
+	greek1 = "Libra";
+}
+else if (greek == "venomous")
+{
+	greek1 = "Scorpio";
+}
+else if (greek == "deft")
+{
+	greek1 = "Sagitarius";
+}	
+
+localStorage.setItem("storedGen", gen1);
+localStorage.setItem("storedGreek", greek1);
+localStorage.setItem("storedChinese", chinese);
+
+
 var type = "You are " + gen + " " + greek + " " + chinese + "!";
-alert(type);
  document.getElementById("userType").innerHTML = type;
+ localStorage.setItem("storedType", type);
 }
     
     document.addEventListener('DOMContentLoaded', function(){
@@ -206,10 +283,14 @@ alert(type);
     });
 
 
-document.getElementById("result").innerHTML = type;
 
 
 
+function displayResults(){
+	  document.getElementById("result").innerHTML = localStorage.getItem("storedType");
+	  document.getElementById("generation").innerHTML = localStorage.getItem("storedGen");
+	  document.getElementById("greekZodiac").innerHTML = localStorage.getItem("storedGreek");
+	  document.getElementById("chineseZodiac").innerHTML = localStorage.getItem("storedChinese");
+}
 
-
-
+ 
