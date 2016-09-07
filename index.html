@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en-US">
-<script src ="scripts.js"></script>
 <link type="text/css" rel = "stylesheet" href="styles.css">
-
+<script src ="scripts.js"></script>
 <div id ="page">
 
 
@@ -17,23 +16,27 @@
 </head>
 <div id = "nav">
 <ul id="list-nav">
-  <li><a href="main.html">Home</a></li>
+  <li><a href="index.html">Home</a></li>
   <li><a href="results.html">Results</a></li>
   <li><a href="references.html">References</a></li>
-  <li><a href="contact.html">Contact</a></li>
 </ul>
 </div>
 </div>
 
 
 
-
 <div id = "content">
   <body>
-<form>
-<input type="date" id="bday"><br>
-</form>
-<button id = "demo"> Click me</button>
+  <form>
+  Birth Year
+  <input type="number" ID="year1" min="1900" max="2016">
+    Birth Month
+  <input type="number" ID="month1" min="1" max="12">
+    Birth day
+  <input type="number" ID="day1" min="1" max="31">
+  <input type = "submit" ID= "submit">
+
+  </form>
   </body>
 </div>
 
