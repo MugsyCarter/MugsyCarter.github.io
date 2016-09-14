@@ -1,4 +1,6 @@
- 
+
+
+
 function zodiac(){
 var currentYear = 2016;
 var chinese = "";
@@ -6,6 +8,7 @@ var greek = "";
 var gen = "";
 var greek1 = "";
 var gen1 = "";
+var name = document.getElementById("firstName").value;
 var year = document.getElementById("year1").value;
 var month = document.getElementById("month1").value;
 var day = document.getElementById("day1").value;
@@ -268,29 +271,37 @@ else if (greek == "deft")
 	greek1 = "Sagitarius";
 }	
 
+localStorage.setItem("storedName", name);
 localStorage.setItem("storedGen", gen1);
 localStorage.setItem("storedGreek", greek1);
 localStorage.setItem("storedChinese", chinese);
 
+	
+//construct object here
+function Person() {
+	this.personName = name;
+    this.generation = gen1;
+    this.greekSign = greek1;
+    this.chineseSign = chinese;
+    this.type = ",  you are " + gen + " " + greek + " " + chinese + "!";
+}
+var user = new Person();
 
-var type = "You are " + gen + " " + greek + " " + chinese + "!";
- document.getElementById("userType").innerHTML = type;
- localStorage.setItem("storedType", type);
+ document.getElementById("userType").innerHTML = user.type;
+ localStorage.setItem("storedType", user.type);
 }
     
+
     document.addEventListener('DOMContentLoaded', function(){
         document.getElementById('submit').addEventListener('click', zodiac);
     });
 
 
-
-
-
 function displayResults(){
-	  document.getElementById("result").innerHTML = localStorage.getItem("storedType");
-	  document.getElementById("generation").innerHTML = localStorage.getItem("storedGen");
-	  document.getElementById("greekZodiac").innerHTML = localStorage.getItem("storedGreek");
-	  document.getElementById("chineseZodiac").innerHTML = localStorage.getItem("storedChinese");
+	document.getElementById("img").src = "images/" + localStorage.getItem("storedChinese") + ".jpg";
+	document.getElementById("name").innerHTML = localStorage.getItem("storedName");
+	document.getElementById("result").innerHTML = localStorage.getItem("storedType");
+	document.getElementById("generation").innerHTML = localStorage.getItem("storedGen");
+	document.getElementById("greekZodiac").innerHTML = localStorage.getItem("storedGreek");
+	document.getElementById("chineseZodiac").innerHTML = localStorage.getItem("storedChinese");
 }
-
- 
